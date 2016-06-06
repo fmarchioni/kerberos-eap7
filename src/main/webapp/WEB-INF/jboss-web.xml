@@ -1,6 +1,4 @@
 <jboss-web>
-	<security-domain>SPNEGO</security-domain>
-	<valve>
-		<class-name>org.jboss.security.negotiation.NegotiationAuthenticator</class-name>
-	</valve>
+    <security-domain>SPNEGO</security-domain>
+    <jacc-star-role-allow>true</jacc-star-role-allow>
 </jboss-web>
