@@ -107,7 +107,7 @@ The test server has hardcoded following settings:
 The test server project is a runnable JAR file 
 
 	$ cd $SPNEGO_TEST_DIR
-	$ java -jar kerberos-using-apacheds.jar test.ldif
+	$ java -jar target/kerberos-using-apacheds.jar test.ldif
 
 Launching the test server also creates an `krb5.conf` kerberos configuration file in the current folder. We will use it later.
 
@@ -155,7 +155,7 @@ Keytab files can be used to log into Kerberos without being prompted for a passw
 Use the `CreateKeytab` utility from the `kerberos-using-apacheds` project to generate the keytab for the `HTTP/localhost@JBOSS.ORG` principal:
 
 	$ cd $SPNEGO_TEST_DIR
-	$ java -classpath kerberos-using-apacheds.jar org.jboss.test.kerberos.CreateKeytab HTTP/localhost@JBOSS.ORG httppwd http.keytab
+	$ java -classpath target/kerberos-using-apacheds.jar org.jboss.test.kerberos.CreateKeytab HTTP/localhost@JBOSS.ORG httppwd http.keytab
 
 You can also use some system utility such as `ktutil` to generate your keytab file.
 
