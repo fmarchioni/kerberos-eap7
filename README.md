@@ -215,6 +215,35 @@ There are 3 test pages included:
  * [User page](http://localhost:8080/spnego-demo/user/) is reachable by Admin and User role (so both `jduke@JBOSS.ORG` and `hnelson@JBOSS.ORG` should have access)
  * [Admin page](http://localhost:8080/spnego-demo/admin/) is reachable only by Admin role (only `jduke@JBOSS.ORG` should have access)
 
+Troubleshooting
+---------------
+
+**1)** Make sure to use the default user in all Terminal / CMD sessions. Do not use 'sudo' or 'su'.
+The reason is that when you open Firefox, it will open within the context of currently signed in user. And it will use that user's Kerberos ticket to perform authentication.
+When you obtain Kerberos ticket using Terminal session, you have to be that same user, otherwise the ticket will not be visible to the browser.
+
+Of course make sure to obtain the ticket:
+
+```
+kinit hnelson@JBOSS.ORG
+```
+with password `secret`.
+
+
+**2)** On Linux make sure that the first entry in your /etc/hosts file is:
+```
+127.0.0.1  localhost
+```
+
+Even if it already contains a similar entry like:
+
+    127.0.0.1  localhost.localdomain localhost
+
+Make sure to insert the short one before the existing one.
+
+**3)** Make sure that you have configured Firefox attributes via about:config url, and set `network.negotiate-auth.trusted-uris` and `network.negotiate-auth.delegation-uris` to `localhost`,
+and `network.negotiate-auth.allow-non-fqdn` to `true`.
+
 ## License
 
 * [GNU Lesser General Public License Version 2.1](http://www.gnu.org/licenses/lgpl-2.1-standalone.html)
