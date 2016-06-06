@@ -1,4 +1,4 @@
-# SPNEGO secured web application demo for JBoss EAP 6.x, WildFly 8.x or JBoss AS 7.x
+# SPNEGO secured web application demo for JBoss EAP 7.x
 
 Demo application which shows, how to get Kerberos authentication working in JBboss Application Server.
 
@@ -18,9 +18,7 @@ Demo application which shows, how to get Kerberos authentication working in JBbo
 
 		<jboss-web>
 			<security-domain>SPNEGO</security-domain>
-			<valve>
-				<class-name>org.jboss.security.negotiation.NegotiationAuthenticator</class-name>
-			</valve>
+			<jacc-star-role-allow>true</jacc-star-role-allow>
 		</jboss-web>
 
  * The security domain uses the `SPNEGOLoginModule` JAAS login module and it has name `SPNEGO` in this demo.
@@ -60,16 +58,16 @@ There are several steps, which should be completed to get the demo working.
 
 ### Prepare your system
 
-Install MIT kerberos utils, [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) version 6 or newer,
+Install MIT kerberos utils, [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) version 8 or newer,
 [git](http://git-scm.com/) and [Maven](http://maven.apache.org/), unzip and wget.
 
 Fedora:
 
-	$ sudo yum install wget unzip java-1.7.0-openjdk-devel krb5-workstation maven git
+	$ sudo yum install wget unzip java-1.8.0-openjdk-devel krb5-workstation maven git
 
 Ubuntu:
 
-	$ sudo apt-get install wget unzip openjdk-6-jdk krb5-user git maven
+	$ sudo apt-get install wget unzip openjdk-8-jdk krb5-user git maven
 
 ### Prepare your browser
 
@@ -161,21 +159,20 @@ Use the `CreateKeytab` utility from the `kerberos-using-apacheds` project to gen
 
 You can also use some system utility such as `ktutil` to generate your keytab file.
 
-### Prepare JBoss AS 7.x
+### Prepare JBoss EAP 7.X
 
-Download the [JBoss AS 7.x](http://www.jboss.org/jbossas/downloads) and install it.
+Download the [JBoss AS 7.x](https://www.redhat.com/en/technologies/jboss-middleware/application-platform) and install it.
 
 	$ cd $SPNEGO_TEST_DIR
-	$ wget http://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/jboss-as-7.1.1.Final.zip
-	$ unzip jboss-as-7.1.1.Final.zip
-	$ export JBOSS_HOME=$SPNEGO_TEST_DIR/jboss-as-7.1.1.Final
+	$ unzip jboss-eap-7.0.0.zip
+	$ export JBOSS_HOME=$SPNEGO_TEST_DIR/jboss-eap-7.0.0.zip
 
-Start the AS 7:
+Start JBoss EAP 7:
 
 	$ cd $JBOSS_HOME/bin
 	$ ./standalone.sh
 
-Configure the AS 7 using management API (CLI):
+Configure the EAP 7 using management API (CLI):
 
 	$ cd $JBOSS_HOME/bin
 	$ cat << EOT > $SPNEGO_TEST_DIR/cli-commands.txt
