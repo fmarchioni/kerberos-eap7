@@ -2,8 +2,8 @@
 
 Demo application which shows, how to get Kerberos authentication working in JBoss Application Server v 7.
 It is made up of two projects:
-kerberos-using-apacheds: Starts ApacheDS Server, creates keytab and Kerberos configuration file
-spnego-demo: Builds a Demo application featuring SPNEGO authentication
+ - kerberos-using-apacheds: Starts ApacheDS Server, creates keytab and Kerberos configuration file
+ - spnego-demo: Builds a Demo application featuring SPNEGO authentication
 
 ### Compile the projects
 
