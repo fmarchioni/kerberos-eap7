@@ -1,4 +1,0 @@
-<jboss-web>
-    <security-domain>SPNEGO</security-domain>
-    <jacc-star-role-allow>true</jacc-star-role-allow>
-</jboss-web>
