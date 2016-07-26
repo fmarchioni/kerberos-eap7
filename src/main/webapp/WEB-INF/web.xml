@@ -1,0 +1,25 @@
+<web-app>
+  <display-name>App1</display-name>
+  <description>App1</description>
+  <!-- Define a security constraint that requires the All role to access resources -->
+  <security-constraint>
+    <display-name>Security Constraint on Conversation</display-name>
+    <web-resource-collection>
+      <web-resource-name>exampleWebApp</web-resource-name>
+      <url-pattern>/user/*</url-pattern>
+    </web-resource-collection>
+   <auth-constraint>
+		<role-name>User</role-name>
+		</auth-constraint>
+  </security-constraint>
+  <!-- Define the Login Configuration for this Application -->
+  <login-config>
+    <auth-method>SPNEGO</auth-method>
+    <realm-name>SPNEGO</realm-name>
+  </login-config>
+  <!-- Security roles referenced by this web application -->
+  <security-role>
+    <description>Role required to log in to the Application</description>
+    <role-name>User</role-name>
+  </security-role>
+</web-app>
