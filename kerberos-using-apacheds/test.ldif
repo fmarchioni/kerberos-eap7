@@ -1,0 +1,127 @@
+dn: ou=Users,dc=jboss,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: Users
+
+dn: ou=Groups,dc=jboss,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: Groups
+description: JBoss Groups
+
+dn: uid=krbtgt,ou=Users,dc=jboss,dc=org
+objectClass: top
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: krb5principal
+objectClass: krb5kdcentry
+cn: KDC Service
+sn: Service
+uid: krbtgt
+userPassword: secret
+krb5PrincipalName: krbtgt/JBOSS.ORG@JBOSS.ORG
+krb5KeyVersionNumber: 0
+
+dn: uid=ldap,ou=Users,dc=jboss,dc=org
+objectClass: top
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: krb5principal
+objectClass: krb5kdcentry
+cn: LDAP
+sn: Service
+uid: ldap
+userPassword: randall
+krb5PrincipalName: ldap/localhost@JBOSS.ORG
+krb5KeyVersionNumber: 0
+
+dn: uid=HTTP,ou=Users,dc=jboss,dc=org
+objectClass: top
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: krb5principal
+objectClass: krb5kdcentry
+cn: HTTP
+sn: Service
+uid: HTTP
+userPassword: httppwd
+krb5PrincipalName: HTTP/localhost@JBOSS.ORG
+krb5KeyVersionNumber: 0
+
+dn: uid=hnelson,ou=Users,dc=jboss,dc=org
+objectClass: top
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: krb5principal
+objectClass: krb5kdcentry
+cn: Horatio Nelson
+sn: Nelson
+uid: hnelson
+userPassword: secret
+krb5PrincipalName: hnelson@JBOSS.ORG
+krb5KeyVersionNumber: 0
+
+dn: uid=jduke,ou=Users,dc=jboss,dc=org
+objectClass: top
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: krb5principal
+objectClass: krb5kdcentry
+cn: Java Duke
+sn: duke
+uid: jduke
+userPassword: secret 
+krb5PrincipalName: jduke@JBOSS.ORG
+krb5KeyVersionNumber: 0
+
+dn: uid=root,ou=Users,dc=jboss,dc=org
+objectClass: top
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: krb5principal
+objectClass: krb5kdcentry
+cn: Java Duke
+sn: root 
+uid: root 
+userPassword: secret 
+krb5PrincipalName: root@JBOSS.ORG
+krb5KeyVersionNumber: 0
+
+
+dn: uid=gsstestserver,ou=Users,dc=jboss,dc=org
+objectClass: top
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: krb5principal
+objectClass: krb5kdcentry
+cn: gsstestserver
+sn: Service
+uid: gsstestserver
+userPassword: gsstestpwd
+krb5PrincipalName: gsstestserver/xxx@JBOSS.ORG
+krb5KeyVersionNumber: 0
+
+
+dn: cn=Junior,ou=Groups,dc=jboss,dc=org
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: Junior
+uniqueMember: uid=hnelson,ou=Users,dc=jboss,dc=org
+description: Users who are Operational
+ou: Groups
+
+dn: cn=Senior,ou=Groups,dc=jboss,dc=org
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: Senior
+uniqueMember: uid=jduke,ou=Users,dc=jboss,dc=org
+description: Users who are Developers
+ou: Groups
+
+dn: cn=Root,ou=Groups,dc=jboss,dc=org
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: Root
+uniqueMember: uid=root,ou=Users,dc=jboss,dc=org
+description: Users who are Operational
+ou: Groups

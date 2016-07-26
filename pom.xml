@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.jboss.kerberos</groupId>
+	<artifactId>kerberos-eap7</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>kerberos-using-apacheds-and-spnego</name>
+	<url>https://github.com/fmarchioni/kerberos-eap7</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<version.org.apache.ds>2.0.0-M17</version.org.apache.ds>
+	</properties>
+
+    <modules>
+        <module>kerberos-using-apacheds</module>
+        <module>spnego-demo</module>
+    </modules>
+</project>
