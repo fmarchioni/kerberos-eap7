@@ -17,6 +17,6 @@
 
     <modules>
         <module>kerberos-using-apacheds</module>
-        <module>spnego-demo</module>
+        <module>kerberos-spnego</module>
     </modules>
 </project>
