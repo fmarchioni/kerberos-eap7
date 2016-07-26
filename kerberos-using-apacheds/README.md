@@ -47,7 +47,7 @@ Now with the generated krb5.conf, either configure the JBOSS.ORG realm in the `/
 	$ export KRB5_CONFIG=/tmp/krb5.conf
 ## Generate keytab
 
-The project contains a simple Kerberos keytab generator:
+The project contains a simple Kerberos keytab generator: 
 
 	$ java -classpath kerberos-using-apacheds.jar org.jboss.test.kerberos.CreateKeytab
 	Kerberos keytab generator
