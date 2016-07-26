@@ -21,7 +21,7 @@ You need to have [Maven](http://maven.apache.org/) installed
 
 The project contains two modules:
 
-1) kerberos-using-apacheds : This project contains an embedded ApacheDS Server and utilities to generate a keytab so that you can test Kerberos authentication using the EAP 7 Admin Console
-2) kerberos-spnego : This project demonsytrates how to use Kerberos + SPNEGO to authenticate in a Web application
+* kerberos-using-apacheds : This project contains an embedded ApacheDS Server and utilities to generate a keytab so that you can test Kerberos authentication using the EAP 7 Admin Console
+* kerberos-spnego : This project demonsytrates how to use Kerberos + SPNEGO to authenticate in a Web application
 
 See the single projects for more details
