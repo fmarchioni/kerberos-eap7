@@ -90,13 +90,16 @@ The following configuration will now be included in your server's XML file:
 ### Testing the Kerberos login against Management Interfaces
 We will now test the Kerberos authentication against the Web management interface. Before doing that, we will need obtaining an initial ticket for a principal of our Realm.
 The recommended package to do that, is the krb5-workstation package which can be installed on a RHEL or Fedora operating system as follows:
+
 	$ sudo yum install krb5-workstation
+
 Now you can use the kinit command to collect a ticket for authentication. In the LDIF file we have imported, there are a couple of users for that purpose. One of them is hnelson@JBOSS.ORG whose password is “secret”. Execute from the shell:
 
 	$ kinit hnelson@JBOSS.ORG
 	Password for hnelson@JBOSS.ORG: secret
 
 Now, from within the same shell, execute your browser pointing to the Admin Console: 
+
 	$ firefox http://localhost:9990
 
 You should be able to connect automatically (as hnelson@JBOSS.ORG) to the Web admin console of EAP 7
